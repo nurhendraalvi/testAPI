@@ -35,7 +35,7 @@ public class FootballViewModel extends ViewModel {
 
             @Override
             public void onFailure(Call<Club1Response> call, Throwable t) {
-                Log.e("Retrofit Get", t.toString());
+                Log.d("FootbalViewModel","Retrofit Get"+t.getMessage());
             }
         });
     }

@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ClubAdapter extends RecyclerView.Adapter<ClubAdapter.ViewHolder> {
 
-    private static String BASE_IMAGE_URL = "https:\\/\\/www.thesportsdb.com\\/images\\/media\\/team\\/logo\\/";
+    //private static String BASE_IMAGE_URL = "https:\\/\\/www.thesportsdb.com\\/images\\/media\\/team\\/logo\\/";
     public Context context;
     private ArrayList<TeamsItem> Club = new ArrayList<>();
 
@@ -27,8 +27,8 @@ public class ClubAdapter extends RecyclerView.Adapter<ClubAdapter.ViewHolder> {
     }
 
     public void setClub(ArrayList<TeamsItem> Club) {
-        Club.clear();
-        Club.addAll(Club);
+        this.Club.clear();
+        this.Club.addAll(Club);
         notifyDataSetChanged();
     }
 

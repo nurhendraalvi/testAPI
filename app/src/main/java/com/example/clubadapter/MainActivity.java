@@ -1,6 +1,7 @@
 package com.example.clubadapter;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -17,14 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView rvClub;
     private FootballViewModel viewModel;
     private String l = "English Premier League";
-    private Observer<ArrayList<TeamsItem>> getlistClub = new Observer<ArrayList<TeamsItem>>() {
-        @Override
-        public void onChanged(ArrayList<TeamsItem> clubItems) {
-            if ((clubItems != null)) {
-                clubAdapter.setClub(clubItems);
-            }
-        }
-    };
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,4 +39,14 @@ public class MainActivity extends AppCompatActivity {
         rvClub.setAdapter(clubAdapter);
 
     }
+
+    private Observer<ArrayList<TeamsItem>> getlistClub = new Observer<ArrayList<TeamsItem>>() {
+        @Override
+        public void onChanged(ArrayList<TeamsItem> clubItems) {
+            if ((clubItems != null)) {
+                Log.d("MainActivity", "getListClub Observer : "+clubItems);
+                clubAdapter.setClub(clubItems);
+            }
+        }
+    };
 }
